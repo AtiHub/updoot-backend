@@ -1,0 +1,37 @@
+AllCops:
+  TargetRubyVersion: 2.7.4
+  TargetRailsVersion: 6.1
+  DisplayCopNames: true
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+
+require:
+  - rubocop-rails
+  - rubocop-faker
+  - rubocop-performance
+
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/**/*'
+
+Style/WordArray:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Rails/HttpStatus:
+  Enabled: false
